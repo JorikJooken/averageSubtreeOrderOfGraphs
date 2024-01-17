@@ -14,7 +14,7 @@ make
 
 ## CODE
 ### dumbbellGenerator.cpp
-This program expects three parameters as input (K, L, P) and it will output a dumbbell consisting of a clique of order K and a clique of order L for which a vertex of each is connected by a path such that the path contains P vertices.
+This program expects three parameters as input ($K$, $L$, $P$) and it will output a dumbbell consisting of a clique of order $K$ and a clique of order $L$ for which a vertex of each is connected by a path such that the path contains $P$ vertices.
 For example, the dumbbell with parameters (6,6,4) has order 6+6+4-2=14.
 
 Invoking the command
@@ -35,7 +35,7 @@ n=6
 ```
 
 ### generateDumbbellWithCycle.cpp
-This program expects three parameters as input (K, L, C) and it will output a graph that is obtained as follows. We take a cycle of length C and let u and v be two vertices at distance two from each other. We now identify u with a vertex in a clique of order K and we identify v with a vertex in a clique of order L. The order of the resulting graph is K+L+C-2.
+This program expects three parameters as input ($K$, $L$, $C$) and it will output a graph that is obtained as follows. We take a cycle of length $C$ and let $u$ and $v$ be two vertices at distance two from each other. We now identify $u$ with a vertex in a clique of order $K$ and we identify $v$ with a vertex in a clique of order $L$. The order of the resulting graph is $K+L+C-2$.
 
 For example, the graph with parameters (5,5,8) has order 5+5+8-2=16. This is the graph $D^{\star 1}_{16,5}$ from the paper.
 
@@ -67,7 +67,7 @@ n=16
 ```
 
 ### generateDumbbellWithCycleAndStar.cpp
-This program expects three parameters as input (K, L, C) and it will output a graph that is obtained as follows. We take a cycle of length C and let u and v be two vertices at distance two from each other. We now identify u with the vertex of the highest degree in a star of order K and we identify v with the vertex of the highest degree in a star of order L. The order of the resulting graph is K+L+C-2.
+This program expects three parameters as input ($K$, $L$, $C$) and it will output a graph that is obtained as follows. We take a cycle of length $C$ and let $u$ and $v$ be two vertices at distance two from each other. We now identify $u$ with the vertex of the highest degree in a star of order $K$ and we identify $v$ with the vertex of the highest degree in a star of order $L$. The order of the resulting graph is $K+L+C-2$.
 
 For example, the graph with parameters (8,8,9) has order 8+8+9-2=23. This is the graph $DB^{\star 1}_{23,8}$ from the paper.
 
@@ -187,7 +187,7 @@ E{Sw
 ```
 
 ### allDecreaseOrNot.cpp
-This program is a small helper program that reads triples of lines that represent a graph, the sum of the orders of the subtrees and the number of subtrees. The program will find the graph G with the least number of subtrees and will check for how many graphs the average subtree order is at most equal to the average subtree order of G.
+This program is a small helper program that reads triples of lines that represent a graph, the sum of the orders of the subtrees and the number of subtrees. The program will find the graph $G$ with the least number of subtrees and will check for how many graphs the average subtree order is at most equal to the average subtree order of $G$.
 
 Invoking the command
 ```bash
@@ -200,7 +200,7 @@ Average order strictly decreased 0 times out of 3 pairwise non-isomorphic graphs
 ```
 
 ### compareMuGMuGVMuGE.cpp
-This program expects as input a list of graphs in graph6 format (one graph per line) and it outputs all graphs for which $\mu(G)>\mu(G,v)$ for some vertex v (together with a line that mentions which vertex v). Additionally, the program also outputs for how many edges $e$ incident with $v$ we have $\mu(G,v)>\mu(G,e)$.
+This program expects as input a list of graphs in graph6 format (one graph per line) and it outputs all graphs for which $\mu(G)>\mu(G,v)$ for some vertex $v$ (together with a line that mentions which vertex $v$). Additionally, the program also outputs for how many edges $e$ incident with $v$ we have $\mu(G,v)>\mu(G,e)$.
 
 For example, invoking the command
 ```bash
@@ -223,7 +223,7 @@ This indicates that for the graph $DB^{\star 1}_{23,8}$, i.e. the graph with gra
 ```
 VhCGGE@_C?O?_?_?O?C??G??_?@??@???_??G??@????
 ```
-there is a vertex v for which $\mu(G)>\mu(G,v)$. Moreover, for 2 (out of 2) edges $e$ incident with $v$ we $\mu(G,v)>\mu(G,e)$. This is the case because $\frac{7221319}{511524}>\frac{6962049}{493313}>\frac{6692288}{476032}$.
+there is a vertex $v$ for which $\mu(G)>\mu(G,v)$. Moreover, for 2 (out of 2) edges $e$ incident with $v$ we $\mu(G,v)>\mu(G,e)$. This is the case because $\frac{7221319}{511524}>\frac{6962049}{493313}>\frac{6692288}{476032}$.
 
 ## DATA
 ### resultsForDumbbell_6_6_4
