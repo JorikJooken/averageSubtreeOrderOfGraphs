@@ -34,6 +34,38 @@ n=6
 000110
 ```
 
+### generateDumbbellWithCycle.cpp
+This program expects three parameters as input (K, L, C) and it will output a graph that is obtained as follows. We take a cycle of length C and let u and v be two vertices at distance two from each other. We now identify u with a vertex in a clique of order K and we identify v with a vertex in a clique of order L. The order of the resulting graph is K+L+C-2.
+
+For example, the graph with parameters (5,5,8) has order 5+5+8-2=16. This is the graph $D^{\star 1}_{16,5}$ from the paper.
+
+Invoking the command
+
+```bash
+./generateDumbbellWithCycleExecutable 5 5 8
+```
+
+will result in the following output:
+```
+n=16
+0100000111110000
+1010000000000000
+0101000000001111
+0010100000000000
+0001010000000000
+0000101000000000
+0000010100000000
+1000001000000000
+1000000001110000
+1000000010110000
+1000000011010000
+1000000011100000
+0010000000000111
+0010000000001011
+0010000000001101
+0010000000001110
+```
+
 ### addAllMaximalMatchings.cpp
 This program reads a graph in graph6 format and outputs this graph together with all graphs obtained from adding a maximal matching to this graph.
 
@@ -115,7 +147,7 @@ E{Sw
 210
 ```
 
-### allDecreaseOrNot.cpp.cpp
+### allDecreaseOrNot.cpp
 This program is a small helper program that reads triples of lines that represent a graph, the sum of the orders of the subtrees and the number of subtrees. The program will find the graph G with the least number of subtrees and will check for how many graphs the average subtree order is at most equal to the average subtree order of G.
 
 Invoking the command
