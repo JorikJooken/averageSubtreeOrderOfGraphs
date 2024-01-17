@@ -66,6 +66,45 @@ n=16
 0010000000001110
 ```
 
+### generateDumbbellWithCycleAndStar.cpp
+This program expects three parameters as input (K, L, C) and it will output a graph that is obtained as follows. We take a cycle of length C and let u and v be two vertices at distance two from each other. We now identify u with the vertex of the highest degree in a star of order K and we identify v with the vertex of the highest degree in a star of order L. The order of the resulting graph is K+L+C-2.
+
+For example, the graph with parameters (8,8,9) has order 8+8+9-2=23. This is the graph $DB^{\star 1}_{23,8}$ from the paper.
+
+Invoking the command
+
+```bash
+./generateDumbbellWithCycleAndStarExecutable 8 8 9
+```
+
+will result in the following output:
+```
+n=23
+01000000111111110000000
+10100000000000000000000
+01010000000000001111111
+00101000000000000000000
+00010100000000000000000
+00001010000000000000000
+00000101000000000000000
+00000010100000000000000
+10000001000000000000000
+10000000000000000000000
+10000000000000000000000
+10000000000000000000000
+10000000000000000000000
+10000000000000000000000
+10000000000000000000000
+10000000000000000000000
+00100000000000000000000
+00100000000000000000000
+00100000000000000000000
+00100000000000000000000
+00100000000000000000000
+00100000000000000000000
+00100000000000000000000
+```
+
 ### addAllMaximalMatchings.cpp
 This program reads a graph in graph6 format and outputs this graph together with all graphs obtained from adding a maximal matching to this graph.
 
@@ -159,6 +198,32 @@ will result in the following output:
 Average order non-strictly decreased 1 times out of 3 pairwise non-isomorphic graphs
 Average order strictly decreased 0 times out of 3 pairwise non-isomorphic graphs
 ```
+
+### compareMuGMuGVMuGE.cpp
+This program expects as input a list of graphs in graph6 format (one graph per line) and it outputs all graphs for which $\mu(G)>\mu(G,v)$ for some vertex v (together with a line that mentions which vertex v). Additionally, the program also outputs for how many edges $e$ incident with $v$ we have $\mu(G,v)>\mu(G,e)$.
+
+For example, invoking the command
+```bash
+./generateDumbbellWithCycleAndStarExecutable 8 8 9 | ./nauty/nauty27r3/amtog | ./compareMuGMuGVAndMuGEExecutable
+```
+will result in the following output:
+```
+mu(G,v) < mu(G) for graph:
+VhCGGE@_C?O?_?_?O?C??G??_?@??@???_??G??@????
+ and vertex v: 1
+GSum and GNum: 7221319 511524
+VSum and VNum: 6962049 493313
+ESum and ENum 6692288 476032
+ESum and ENum 6692288 476032
+Additionally we have mu(G,e)<mu(G,v) for 2 out of 2 edges e that contain v
+Computation for average subtree order finished
+```
+
+This indicates that for the graph $DB^{\star 1}_{23,8}$, i.e. the graph with graph6 string:
+```
+VhCGGE@_C?O?_?_?O?C??G??_?@??@???_??G??@????
+```
+there is a vertex v for which $\mu(G)>\mu(G,v)$. Moreover, for 2 (out of 2) edges $e$ incident with $v$ we $\mu(G,v)>\mu(G,e)$. This is the case because $\frac{7221319}{511524}>\frac{6962049}{493313}>\frac{6692288}{476032}$.
 
 ## DATA
 ### resultsForDumbbell_6_6_4
